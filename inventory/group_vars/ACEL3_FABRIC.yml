@@ -35,6 +35,9 @@ spine:
     spine2:
       id: 2
       mgmt_ip: 172.20.20.12/24
+    spine3:
+      id: 3
+      mgmt_ip: 172.20.20.13/24
 
 # Leaf switch groups
 # A maximum of two nodes can form a leaf group
