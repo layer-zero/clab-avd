@@ -1,0 +1,26 @@
+---
+- name: Build Arista EOS EVPN/VXLAN Configuration
+  hosts: ACEL3_FABRIC
+  # connection: local
+  # gather_facts: false
+  collections:
+    - arista.avd
+    - arista.cvp
+  vars:
+    fabric_dir_name: "{{fabric_name}}"
+
+  tasks:
+    - name: generate intended variables
+      tags: [build]
+      import_role:
+        name: arista.avd.eos_designs
+
+    - name: generate device intended config and documentation
+      tags: [build, generate]
+      import_role:
+        name: eos_cli_config_gen
+
+    - name: Deploy configuration to devices
+      tags: [deploy, never]
+      import_role:
+        name: arista.avd.eos_config_deploy_eapi

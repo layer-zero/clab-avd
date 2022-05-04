@@ -1,0 +1,19 @@
+---
+- name: Deploy basic configuration required by AVD to all switches
+  hosts: ACEL3_LAB
+  gather_facts: no
+  collections:
+    - arista.eos
+
+  vars:
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: arista.eos.eos
+    ansible_user: admin
+    ansible_password: admin
+    ansible_become: yes
+    ansible_become_method: enable
+
+  tasks:
+    - name: Deploy base configuration to switches
+      eos_config:
+        src: base-config.cfg
