@@ -35,17 +35,6 @@ aaa_authorization:
     default: local
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
-ntp_servers:
- - 169.254.169.123
-
-# radius_servers:
-#   - host: 192.168.0.1
-#     # vrf: default
-#     key: 0207165218120E
-
-# aaa_server_groups:
-#   - name: atds
-#     type: radius
-#     servers:
-#       - server: 192.168.0.1
-#         # vrf: default
+ntp:
+  servers:
+    - name: 169.254.169.123
