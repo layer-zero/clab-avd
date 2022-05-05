@@ -70,22 +70,22 @@ l3leaf:
         leaf1:
           id: 1
           mgmt_ip: 172.20.20.21/24
-          uplink_switch_interfaces: [Ethernet2, Ethernet2, Ethernet2]
+          uplink_switch_interfaces: [Ethernet2, Ethernet2, Ethernet1]
         leaf2:
           id: 2
           mgmt_ip: 172.20.20.22/24
-          uplink_switch_interfaces: [Ethernet3, Ethernet3, Ethernet3]
+          uplink_switch_interfaces: [Ethernet3, Ethernet3, Ethernet2]
     pod2:
       bgp_as: 65102
       nodes:
         leaf3:
           id: 3
           mgmt_ip: 172.20.20.23/24
-          uplink_switch_interfaces: [Ethernet4, Ethernet4, Ethernet4]
+          uplink_switch_interfaces: [Ethernet4, Ethernet4, Ethernet3]
         leaf4:
           id: 4
           mgmt_ip: 172.20.20.24/24
-          uplink_switch_interfaces: [Ethernet5, Ethernet5, Ethernet5]
+          uplink_switch_interfaces: [Ethernet5, Ethernet5, Ethernet4]
 
 # Update p2p mtu 9000 -> 1500
 p2p_uplinks_mtu: 1500
