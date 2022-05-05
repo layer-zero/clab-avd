@@ -3,7 +3,7 @@ local_users:
   admin:
     privilege: 15
     role: network-admin
-    sha512_password: "$6$oCFR9c/VyAdlIFBc$izSktzY8Pj.kj3swlE/ccmHaOEJbw36GdLsoYQqqUgk2kgAI9UEkGFjXUCasEGVsTwhu7eDeDhBtw1RIqiOZs1"
+    no_password: true
   avd-user:
     privilege: 15
     role: network-admin
@@ -38,3 +38,6 @@ aaa_authorization:
 ntp:
   servers:
     - name: 169.254.169.123
+
+clock:
+  timezone: Europe/Amsterdam
