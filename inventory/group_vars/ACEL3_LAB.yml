@@ -21,11 +21,10 @@ mgmt_interface_vrf: default
 
 # dns servers.
 name_servers:
-  - 172.20.20.1
-  - 8.8.8.8
+  - 127.0.0.11
 
 # dns domain
-dns_domain: acel3.lab
+dns_domain: clab
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 # ntp_servers:
