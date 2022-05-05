@@ -13,18 +13,26 @@ local_users:
 # cvp_instance_ip: <replace with CVP ip or hostname>
 # cvp_ingestauth_key: <replace with CVP aeris ingest key>
 
-# OOB Management network default gateway.
+# OOB management network default gateway.
 mgmt_gateway: 172.20.20.1
 # If ATD is running cEOS, management interface is Management0
 mgmt_interface: Management0
 mgmt_interface_vrf: default
 
-# dns servers.
+# DNS servers.
 name_servers:
   - 127.0.0.11
 
-# dns domain
+# DNS domain
 dns_domain: clab
+
+# AAA authentication and authorization
+aaa_authentication:
+  login:
+    default: local
+aaa_authorization:
+  exec:
+    default: local
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 # ntp_servers:
