@@ -1,0 +1,10 @@
+- name: Collect EOS commands from devices
+  hosts: ACEL3_FABRIC
+  collections:
+    - arista.avd
+    - arista.cvp
+
+  tasks:
+    - name: collect show commands and generate reports
+      import_role:
+        name: arista.avd.eos_snapshot
