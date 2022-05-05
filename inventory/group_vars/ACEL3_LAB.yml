@@ -3,11 +3,16 @@ local_users:
   admin:
     privilege: 15
     role: network-admin
-    no_password: true
+    sha512_password: "$6$0I6T.EkmjTcy6TKP$UM3piYAZ8Ix7s/VXbhheQw0C7kGeGAXMCZnsTgIbHXUQr4lS7UI08Q6qBSkKICGZv0blvUzJGAUfhwP6SDRud1"
   avd-user:
     privilege: 15
     role: network-admin
     sha512_password: "$6$wVJbPGK1cGLn34cO$LL5IGQ.No.LTmK2mvHqjtA.KYlloyYa0Jefj46VUaBg8cHMgZKpJM04fu/mO5o5HMEKfEIDtAJJ4Tr8AM1MDh."
+  ec2-user:
+    privilege: 15
+    role: network-admin
+    no_password: true
+    ssh_key: "{{lookup('file', '~/.ssh/id_rsa.pub') }}"
 
 # Cloud Vision server information
 # cvp_instance_ip: <replace with CVP ip or hostname>
