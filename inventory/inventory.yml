@@ -11,6 +11,11 @@ all:
     ACEL3_LAB:
       vars:
         ansible_user: avd-user
+        ansible_password: 1234QWer
+        # Configure privilege escalation
+        ansible_become: true
+        ansible_become_method: enable
+
       children:
         ACEL3_FABRIC:
           children:
