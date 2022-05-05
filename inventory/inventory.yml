@@ -24,11 +24,11 @@ all:
                 type: spine
               hosts:
                 spine1:
-                  ansible_host: spine1
+                  ansible_host: 172.20.20.11
                 spine2:
-                  ansible_host: spine2
+                  ansible_host: 172.20.20.12
                 spine3:
-                  ansible_host: spine3
+                  ansible_host: 172.20.20.13
                   
             ACEL3_LEAFS:
               vars:
@@ -37,15 +37,15 @@ all:
                 pod1:
                   hosts:
                     leaf1:
-                      ansible_host: leaf1
+                      ansible_host: 172.20.20.21
                     leaf2:
-                      ansible_host: leaf2
+                      ansible_host: 172.20.20.22
                 pod2:
                   hosts:
                     leaf3:
-                      ansible_host: leaf3
+                      ansible_host: 172.20.20.23
                     leaf4:
-                      ansible_host: leaf4
+                      ansible_host: 172.20.20.24
 
             ACEL3_TENANT_NETWORKS:
               children:
