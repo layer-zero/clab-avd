@@ -2,13 +2,13 @@ svi_profiles:
   LAYER_ZERO_PRD:
     enabled: true
     ip_helpers:
-      10.1.0.101
-      10.1.0.102
+      10.1.0.101:
+      10.1.0.102:
   LAYER_ZERO_DEV:
     enabled: true
     ip_helpers:
-      10.1.0.103
-      10.1.0.104
+      10.1.0.103:
+      10.1.0.104:
 
 tenants:
   # Tenant A Specific Information - VRFs / VLANs
