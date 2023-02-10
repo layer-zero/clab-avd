@@ -8,15 +8,11 @@ local_users:
     privilege: 15
     role: network-admin
     sha512_password: "$6$wVJbPGK1cGLn34cO$LL5IGQ.No.LTmK2mvHqjtA.KYlloyYa0Jefj46VUaBg8cHMgZKpJM04fu/mO5o5HMEKfEIDtAJJ4Tr8AM1MDh."
-  ec2-user:
+  tom:
     privilege: 15
     role: network-admin
     no_password: true
     ssh_key: "{{lookup('file', '~/.ssh/id_rsa.pub') }}"
-
-# Cloud Vision server information
-# cvp_instance_ip: <replace with CVP ip or hostname>
-# cvp_ingestauth_key: <replace with CVP aeris ingest key>
 
 # OOB management network default gateway.
 mgmt_gateway: 172.20.20.1
@@ -29,7 +25,7 @@ name_servers:
   - 127.0.0.11
 
 # DNS domain
-dns_domain: clab
+dns_domain: lab.layerzero.nl
 
 # AAA authentication and authorization
 aaa_authentication:
@@ -42,7 +38,7 @@ aaa_authorization:
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 ntp:
   servers:
-    - name: 169.254.169.123
+    - name: ntp.lab.layerzero.nl
 
 clock:
   timezone: Europe/Amsterdam

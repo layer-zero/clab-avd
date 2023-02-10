@@ -1,14 +1,7 @@
 ---
 all:
   children:
-    # cv_servers:
-    #   hosts:
-    #     cv:
-    #       ansible_host: <replace with CVP ip or hostname>
-    #       ansible_user: <replace with CVP user name>
-    #       ansible_password: <replace with CVP password>
-    #       cv_collection: v3
-    ACEL3_LAB:
+    AVD_LAB:
       vars:
         ansible_user: avd-user
         ansible_password: 1234QWer
@@ -17,9 +10,9 @@ all:
         ansible_become_method: enable
 
       children:
-        ACEL3_FABRIC:
+        AVD_FABRIC:
           children:
-            ACEL3_SPINES:
+            AVD_SPINES:
               vars:
                 type: spine
               hosts:
@@ -27,10 +20,8 @@ all:
                   ansible_host: 172.20.20.11
                 spine2:
                   ansible_host: 172.20.20.12
-                spine3:
-                  ansible_host: 172.20.20.13
                   
-            ACEL3_LEAFS:
+            AVD_LEAFS:
               vars:
                 type: l3leaf
               children:
@@ -47,10 +38,10 @@ all:
                     leaf4:
                       ansible_host: 172.20.20.24
 
-            ACEL3_TENANT_NETWORKS:
+            AVD_TENANT_NETWORKS:
               children:
-                ACEL3_LEAFS:
+                AVD_LEAFS:
 
-            ACEL3_SERVERS:
+            AVD_SERVERS:
               children:
-                ACEL3_LEAFS:
+                AVD_LEAFS:

@@ -1,6 +1,6 @@
 ---
 - name: Deploy basic configuration required by AVD to all switches
-  hosts: ACEL3_LAB
+  hosts: AVD_LAB
   gather_facts: no
   collections:
     - arista.eos

@@ -1,0 +1,53 @@
+svi_profiles:
+  LAYER_ZERO_PRD:
+    enabled: true
+    ip_helpers:
+      10.1.0.101
+      10.1.0.102
+  LAYER_ZERO_DEV:
+    enabled: true
+    ip_helpers:
+      10.1.0.103
+      10.1.0.104
+
+tenants:
+  # Tenant A Specific Information - VRFs / VLANs
+  LAYER_ZERO:
+    mac_vrf_vni_base: 10000
+    vrfs:
+      LAYER_ZERO_PRD:
+        vrf_vni: 10
+        vtep_diagnostic:
+          loopback: 100
+          loopback_ip_range: 10.1.255.0/24
+        svis:
+          101:
+            name: LAYER_ZERO_PRD_WEB
+            enabled: true
+            profile: LAYER_ZERO_PRD
+            ip_address_virtual: 10.1.1.254/24
+          102:
+            name: LAYER_ZERO_PRD_DB
+            enabled: true
+            profile: LAYER_ZERO_PRD
+            ip_address_virtual: 10.1.2.254/24
+      LAYER_ZERO_DEV:
+        vrf_vni: 11
+        vtep_diagnostic:
+          loopback: 100
+          loopback_ip_range: 10.1.255.0/24
+        svis:
+          111:
+            name: LAYER_ZERO_DEV_WEB
+            enabled: true
+            profile: LAYER_ZERO_DEV
+            ip_address_virtual: 10.1.11.254/24
+          112:
+            name: LAYER_ZERO_DEV_DB
+            enabled: true
+            profile: LAYER_ZERO_DEV
+            ip_address_virtual: 10.1.12.254/24
+    l2vlans:
+      199:
+        vni_override: 55199
+        name: LAYER_ZERO_PRD_VMOTION

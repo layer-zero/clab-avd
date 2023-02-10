@@ -1,0 +1,34 @@
+---
+port_profiles:
+  LAYER_ZERO_PRD_WEB:
+    mode: access
+    vlans: 101
+  LAYER_ZERO_PRD_DB:
+    mode: access
+    vlans: 102
+
+servers:
+  host1:
+    rack: pod1
+    adapters:
+      - type: nic
+        server_ports: [Ethernet1, Ethernet2]
+        switch_ports: [Ethernet5, Ethernet5]
+        switches: [leaf1, leaf2]
+        profile: LAYER_ZERO_PRD_WEB
+        port_channel:
+          state: present
+          description: PortChanne1
+          mode: active
+  host2:
+    rack: pod2
+    adapters:
+      - type: nic
+        server_ports: [Ethernet1, Ethernet2]
+        switch_ports: [Ethernet5, Ethernet5]
+        switches: [leaf3, leaf4]
+        profile: LAYER_ZERO_PRD_DB
+        port_channel:
+          state: present
+          description: PortChanne1
+          mode: active
