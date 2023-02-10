@@ -1,6 +1,6 @@
 ---
 - name: Build Arista EOS EVPN/VXLAN Configuration
-  hosts: ACEL3_FABRIC
+  hosts: AVD_FABRIC
   collections:
     - arista.avd
     - arista.cvp

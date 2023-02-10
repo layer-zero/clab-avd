@@ -1,5 +1,5 @@
 - name: Collect EOS commands from devices
-  hosts: ACEL3_FABRIC
+  hosts: AVD_FABRIC
   collections:
     - arista.avd
     - arista.cvp

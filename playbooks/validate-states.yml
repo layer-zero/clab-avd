@@ -1,5 +1,5 @@
 - name: Run fabric state validation
-  hosts: ACEL3_FABRIC
+  hosts: AVD_FABRIC
   collections:
     - arista.avd
     - arista.cvp
