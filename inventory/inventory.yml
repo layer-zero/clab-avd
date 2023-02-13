@@ -45,3 +45,12 @@ all:
             AVD_SERVERS:
               children:
                 AVD_LEAFS:
+
+    ENDPOINTS:
+    # These are the end-hosts, which are not covered by AVD.
+    # AVD does not require or use this group, but it allows these devices to be configured through other playbooks.
+      hosts:
+        host1:
+          ansible_host: 172.20.20.31
+        host2:
+          ansible_host: 172.20.20.32
